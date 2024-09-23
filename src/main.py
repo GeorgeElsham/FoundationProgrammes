@@ -19,6 +19,8 @@ programmes = []
 for page in pages:
     programmes += page["Data"]
 
+max_speciality_length = 8 # Hardcoded because easy
+
 for programme in programmes:
     job_code = programme["ProgrammePreference"]
     deanery = programme["Deanery"]
@@ -32,3 +34,6 @@ for programme in programmes:
     f2_hospital_trust = (title.group('f2') or "").split()
 
     specialities = programme["Specialties"].split(", ")
+    specialities_length = len(specialities)
+    if specialities_length > max_speciality_length:
+        raise Exception(f"Exceeded max speciality length")
