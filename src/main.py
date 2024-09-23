@@ -1,5 +1,6 @@
 from pathlib import Path
 import json
+import re
 
 print("MedScript\n=========")
 
@@ -17,3 +18,17 @@ for page_number in range(1, 12):
 programmes = []
 for page in pages:
     programmes += page["Data"]
+
+for programme in programmes:
+    job_code = programme["ProgrammePreference"]
+    deanery = programme["Deanery"]
+    programme_type = programme["ProgrammeType"]
+
+    full_title = programme["ProgrammeTitle"]
+    title_pattern = r"(F1 ?:(?P<f1>[^F]+))?(?:F2 ?:(?P<f2>.+))?"
+    title_regex = re.compile(title_pattern)
+    title = title_regex.match(full_title)
+    f1_hospital_trust = (title.group('f1') or "").strip()
+    f2_hospital_trust = (title.group('f2') or "").split()
+
+    specialities = programme["Specialties"].split(", ")
