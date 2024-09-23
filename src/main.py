@@ -1,4 +1,5 @@
 from pathlib import Path
+import csv
 import json
 import re
 
@@ -45,3 +46,8 @@ for programme in programmes:
     for speciality in specialities:
         row.append(speciality)
     output_data.append(row)
+
+output_path = Path(__file__).parent / f"../output/med.csv"
+with open(output_path, "w") as file:
+    writer = csv.writer(file)
+    writer.writerows(output_data)
