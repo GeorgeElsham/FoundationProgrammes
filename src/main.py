@@ -10,8 +10,8 @@ def pretty(data):
 pages = []
 for page_number in range(1, 12):
     path = Path(__file__).parent / f"../data/page{page_number}.json"
-    with open(path) as f:
-        page_str = f.read()
+    with open(path) as file:
+        page_str = file.read()
         page = json.loads(page_str)
         pages.append(page)
 
