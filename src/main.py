@@ -10,3 +10,7 @@ for page_number in range(1, 12):
         page_str = f.read()
         page = json.loads(page_str)
         pages.append(page)
+
+data = []
+for page in pages:
+    data += page["Data"]
