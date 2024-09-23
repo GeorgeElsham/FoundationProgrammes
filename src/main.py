@@ -31,7 +31,7 @@ for programme in programmes:
     title_regex = re.compile(title_pattern)
     title = title_regex.match(full_title)
     f1_hospital_trust = (title.group('f1') or "").strip()
-    f2_hospital_trust = (title.group('f2') or "").split()
+    f2_hospital_trust = (title.group('f2') or "").strip()
 
     specialities = programme["Specialties"].split(", ")
     specialities_length = len(specialities)
