@@ -14,6 +14,6 @@ for page_number in range(1, 12):
         page = json.loads(page_str)
         pages.append(page)
 
-programs = []
+programmes = []
 for page in pages:
-    programs += page["Data"]
+    programmes += page["Data"]
