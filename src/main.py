@@ -20,19 +20,23 @@ programmes = []
 for page in pages:
     programmes += page["Data"]
 
-output_data = [["Job Code", "Deanery", "Programme Type", "F1 Hospital Trust", "F2 Hospital Trust", "Specialities"]]
+output_data = [["Job Code", "Deanery", "Programme Type", "F1 Hospital Trust", "F2 Hospital Trust", "F1 Title", "F2 Title", "Specialities"]]
 
 for programme in programmes:
     job_code = programme["ProgrammePreference"]
     deanery = programme["Deanery"]
     programme_type = programme["ProgrammeType"]
 
+    trusts = programme["EmployerTrust"].split(", ")
+    f1_hospital_trust = trusts[0]
+    f2_hospital_trust = trusts[1] if len(trusts) > 1 else ""
+
     full_title = programme["ProgrammeTitle"]
     title_pattern = r"(F1 ?:(?P<f1>[^F]+))?(?:F2 ?:(?P<f2>.+))?"
     title_regex = re.compile(title_pattern)
     title = title_regex.match(full_title)
-    f1_hospital_trust = (title.group('f1') or "").strip()
-    f2_hospital_trust = (title.group('f2') or "").strip()
+    f1_title = (title.group('f1') or "").strip()
+    f2_title = (title.group('f2') or "").strip()
 
     specialities = programme["Specialties"].split(", ")
 
@@ -42,6 +46,8 @@ for programme in programmes:
         programme_type,
         f1_hospital_trust,
         f2_hospital_trust,
+        f1_title,
+        f2_title,
     ]
     for speciality in specialities:
         row.append(speciality)
