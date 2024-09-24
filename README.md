@@ -27,4 +27,6 @@ You may see "`[SHORTENED]:`" in the description column for some programmes. This
 
 ## Running
 
+The `med.csv` file is already committed in this repository. You shouldn't need to run this script unless you change the code.
+
 Use Python 3 and execute by running `main.py` with `python3 src/main.py` or equivalent.
