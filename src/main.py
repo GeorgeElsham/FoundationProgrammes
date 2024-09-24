@@ -21,6 +21,7 @@ for page in pages:
     programmes += page["Data"]
 
 output_data = [[
+    "ID",
     "Job Code",
     "Deanery",
     "Programme Type",
@@ -40,6 +41,7 @@ output_data = [[
 ]]
 
 for programme in programmes:
+    id = programme["FoundationProgrammesId"]
     job_code = programme["ProgrammePreference"]
     deanery = programme["Deanery"]
     programme_type = programme["ProgrammeType"]
@@ -60,6 +62,7 @@ for programme in programmes:
     specialities = programme["Specialties"].split(", ")
 
     row = [
+        id,
         job_code,
         deanery,
         programme_type,
