@@ -28,6 +28,7 @@ output_data = [[
     "F2 Hospital Trust",
     "F1 Title",
     "F2 Title",
+    "Description",
     "Speciality 1",
     "Speciality 2",
     "Speciality 3",
@@ -54,6 +55,8 @@ for programme in programmes:
     f1_title = (title.group('f1') or "").strip()
     f2_title = (title.group('f2') or "").strip()
 
+    description = programme["ProgrammeDescription"]
+
     specialities = programme["Specialties"].split(", ")
 
     row = [
@@ -64,6 +67,7 @@ for programme in programmes:
         f2_hospital_trust,
         f1_title,
         f2_title,
+        description,
     ]
     for speciality in specialities:
         row.append(speciality)
