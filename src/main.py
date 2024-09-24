@@ -28,7 +28,14 @@ output_data = [[
     "F2 Hospital Trust",
     "F1 Title",
     "F2 Title",
-    "Specialities",
+    "Speciality 1",
+    "Speciality 2",
+    "Speciality 3",
+    "Speciality 4",
+    "Speciality 5",
+    "Speciality 6",
+    "Speciality 7",
+    "Speciality 8",
 ]]
 
 for programme in programmes:
