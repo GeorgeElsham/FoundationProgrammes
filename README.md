@@ -2,7 +2,7 @@
 
 ## What is this
 
-This is a Python script to generate a CSV for [NHS Foundation Programmes](https://www.oriel.nhs.uk/Web/Programme/GetProgramme/L085MXN4K1NSeFI3cnBEYTVWM24zeUpOSUJmaGRqZXhlVDVySXNrZytOVUpRdXRQK0dpWFZGWXoxVkIvSmNPRg). The script is specialised for the input data and is not designed to be robust for any input—it just needed to work.
+This is a Python script to generate a CSV for [NHS Foundation Programmes 2025](https://www.oriel.nhs.uk/Web/Programme/GetProgramme/L085MXN4K1NSeFI3cnBEYTVWM24zeUpOSUJmaGRqZXhlVDVySXNrZytOVUpRdXRQK0dpWFZGWXoxVkIvSmNPRg) containing 10,350 programmes. The script is specialised for the input data and is not designed to be robust for any input—it just needed to work.
 
 ## What can I do with this
 
