@@ -83,8 +83,8 @@ for programme in programmes:
     output_data.append(row)
 
 output_path = Path(__file__).parent / f"../output/med.csv"
-with open(output_path, "w") as file:
-    writer = csv.writer(file)
+with open(output_path, "w", newline="\n") as file:
+    writer = csv.writer(file, lineterminator="\n")
     writer.writerows(output_data)
 
 print("Done!")
