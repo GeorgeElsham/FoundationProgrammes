@@ -37,6 +37,12 @@ output_data = [[
     "Speciality 8",
 ]]
 
+title_pattern = r"(F1 ?:(?P<f1>(?:(?!F2 ?:).)+))?(?:F2 ?:(?P<f2>.+))?"
+title_regex = re.compile(title_pattern)
+
+description_pattern = r"(?P<start>(?:(?!F1 - ?).)*)F1 - ?(?P<f1>.+)[\.\,]\s+F2 - ?(?P<f2>.+)\.(?P<end>.+)"
+description_regex = re.compile(description_pattern)
+
 for programme in programmes:
     id = programme["FoundationProgrammesId"]
     job_code = programme["ProgrammePreference"]
@@ -48,15 +54,11 @@ for programme in programmes:
     f2_hospital_trust = trusts[1] if len(trusts) > 1 else ""
 
     title = programme["ProgrammeTitle"]
-    title_pattern = r"(F1 ?:(?P<f1>(?:(?!F2 ?:).)+))?(?:F2 ?:(?P<f2>.+))?"
-    title_regex = re.compile(title_pattern)
     title_match = title_regex.match(title)
     f1_title = (title_match.group('f1') or "").strip()
     f2_title = (title_match.group('f2') or "").strip()
 
     description = programme["ProgrammeDescription"]
-    description_pattern = r"(?P<start>(?:(?!F1 - ?).)*)F1 - ?(?P<f1>.+)[\.\,]\s+F2 - ?(?P<f2>.+)\.(?P<end>.+)"
-    description_regex = re.compile(description_pattern)
     description_match = description_regex.match(description)
     if description_match is not None:
         f1_title = description_match.group('f1').strip()
