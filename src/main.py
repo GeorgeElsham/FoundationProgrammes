@@ -5,9 +5,6 @@ import re
 
 print("MedScript\n=========")
 
-def pretty(data):
-    return json.dumps(data, indent=True)
-
 pages = []
 for page_number in range(1, 12):
     path = Path(__file__).parent / f"../data/page{page_number}.json"
