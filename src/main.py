@@ -3,7 +3,7 @@ import csv
 import json
 import re
 
-print("MedScript\n=========")
+print("Running…")
 
 pages = []
 for page_number in range(1, 12):
