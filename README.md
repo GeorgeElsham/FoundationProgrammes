@@ -19,6 +19,12 @@ Use the outputted `med.csv`. You can import it into Microsoft Excel like so:
 9) Ignore warnings and finish.
 10) Complete.
 
+## Quirks
+
+The input data isn't formatted the best, so there are many inconsistencies.
+
+You may see "`[SHORTENED]:`" in the description column for some programmes. This means that the F1 & F2 titles have been extracted from this description, and not displayed in the description anymore for readability.
+
 ## Running
 
 Use Python 3 and execute by running `main.py` with `python3 src/main.py` or equivalent.
