@@ -51,7 +51,7 @@ for programme in programmes:
     f2_hospital_trust = trusts[1] if len(trusts) > 1 else ""
 
     full_title = programme["ProgrammeTitle"]
-    title_pattern = r"(F1 ?:(?P<f1>[^F]+))?(?:F2 ?:(?P<f2>.+))?"
+    title_pattern = r"(F1 ?:(?P<f1>(?:(?!F2 ?:).)+))?(?:F2 ?:(?P<f2>.+))?"
     title_regex = re.compile(title_pattern)
     title = title_regex.match(full_title)
     f1_title = (title.group('f1') or "").strip()
