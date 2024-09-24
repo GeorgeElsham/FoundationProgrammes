@@ -50,12 +50,12 @@ for programme in programmes:
     f1_hospital_trust = trusts[0]
     f2_hospital_trust = trusts[1] if len(trusts) > 1 else ""
 
-    full_title = programme["ProgrammeTitle"]
+    title = programme["ProgrammeTitle"]
     title_pattern = r"(F1 ?:(?P<f1>(?:(?!F2 ?:).)+))?(?:F2 ?:(?P<f2>.+))?"
     title_regex = re.compile(title_pattern)
-    title = title_regex.match(full_title)
-    f1_title = (title.group('f1') or "").strip()
-    f2_title = (title.group('f2') or "").strip()
+    title_match = title_regex.match(title)
+    f1_title = (title_match.group('f1') or "").strip()
+    f2_title = (title_match.group('f2') or "").strip()
 
     description = programme["ProgrammeDescription"]
 
