@@ -58,7 +58,7 @@ for programme in programmes:
     f2_title = (title_match.group('f2') or "").strip()
 
     description = programme["ProgrammeDescription"]
-    description_pattern = r"F1 - (?P<f1>.+)\.  F2 - (?P<f2>.+)\.  (?P<rest>.*)"
+    description_pattern = r"F1 - (?P<f1>.+)\.\s+F2 - (?P<f2>.+)\.\s+(?P<rest>.*)"
     description_regex = re.compile(description_pattern)
     description_match = description_regex.match(description)
     if description_match is not None:
