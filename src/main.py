@@ -20,7 +20,16 @@ programmes = []
 for page in pages:
     programmes += page["Data"]
 
-output_data = [["Job Code", "Deanery", "Programme Type", "F1 Hospital Trust", "F2 Hospital Trust", "F1 Title", "F2 Title", "Specialities"]]
+output_data = [[
+    "Job Code",
+    "Deanery",
+    "Programme Type",
+    "F1 Hospital Trust",
+    "F2 Hospital Trust",
+    "F1 Title",
+    "F2 Title",
+    "Specialities",
+]]
 
 for programme in programmes:
     job_code = programme["ProgrammePreference"]
